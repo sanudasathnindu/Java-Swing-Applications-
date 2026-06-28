@@ -1,4 +1,9 @@
 import javax.swing.*;
+class Calculator{
+	Calculator(String title){
+		
+	}	
+} 
 class Demo{
 	public static void main(String args[]){
 		JFrame f1=new JFrame("JFrame");
@@ -12,5 +17,6 @@ class Demo{
 		c1.setLocationRelativeTo(null);
 		c1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		c1.setVisible(true);
+		
 	}
 }
