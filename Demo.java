@@ -3,29 +3,30 @@ import java.awt.*;
 
 class Demo{
 	public static void main(String args[]){
-		JFrame f1=new JFrame("Calculator");	
+		JFrame f1=new JFrame("BorderLayout");	
+		JFrame f2=new JFrame("FlowLayout");	
 		f1.setSize(300,300);
+		f2.setSize(300,300);
 		f1.setLocationRelativeTo(null);
+		f2.setLocationRelativeTo(null);
 		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		f1.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		//0->FlowLayout.CENTER
-		//1->FlowLayout.RIGHT
-		//2->FlowLayout.LEFT
-		JButton btAdd=new JButton("Add "); //setText(String)
-		JButton btDelete=new JButton("Delete");
-		JButton btUpdate=new JButton("Update");
-		JButton btView=new JButton("View");
-		btAdd.setFont(new Font("",1,30));
-		btDelete.setFont(new Font("",1,30));
-		btUpdate.setFont(new Font("",1,30));
-		btView.setFont(new Font("",1,30));
+		f1.setLayout(new BorderLayout());//->Default BorderLayout
+		f2.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
-		f1.add(btAdd);
-		f1.add(btUpdate);
-		f1.add(btDelete);
-		f1.add(btView);
+		JTextField txtBorderLayout=new JTextField(5);
+		JTextField txtFlowLayout=new JTextField(5);
+		
+		txtBorderLayout.setFont(new Font("",1,30));
+		txtFlowLayout.setFont(new Font("",1,30));
+		
+		f1.add("North",txtBorderLayout);
+		f1.add("South",new JButton("Test"));
+		
+		f2.add(txtFlowLayout);
 		
 		f1.setVisible(true);
+		f2.setVisible(true);
 	}
 }
