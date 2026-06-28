@@ -1,7 +1,3 @@
-//Adding controllers  (JButton, JTextField, JLabel….)
-//============================================
-//JButton
-//======
 import javax.swing.*;
 import java.awt.*;
 class Demo{
@@ -14,7 +10,8 @@ class Demo{
 		JButton b1=new JButton();
 		b1.setText("Hello");
 		b1.setFont(new Font("",1,30));
-		f1.add(b1);
+		f1.add("South",b1);
+		
 		f1.setVisible(true);
 	}
 }
