@@ -1,8 +1,8 @@
 import javax.swing.*;
-class Calculator{
+class Calculator extends JFrame{
 	Calculator(String title){
 		
-	}	
+	}
 } 
 class Demo{
 	public static void main(String args[]){
@@ -20,3 +20,5 @@ class Demo{
 		
 	}
 }
+//Calculator ->Subclass
+//JFrame -->Super class
