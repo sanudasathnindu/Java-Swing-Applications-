@@ -6,16 +6,21 @@ class Demo{
 		f1.setSize(300,300);
 		f1.setLocationRelativeTo(null);
 		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f1.setLayout(new FlowLayout());
 		
-		JButton[] btArray=new JButton[5];
-		String[] buttonText={"North","South","East","West","Center"}; 
-		for (int i = 0; i < 5; i++){
-			btArray[i]=new JButton(buttonText[i]);
-			btArray[i].setSize(300,400);
-			btArray[i].setFont(new Font("",1,30));
-			f1.add(buttonText[i],btArray[i]);
-		}
-		f1.pack();
+		JButton btAdd=new JButton("Add "); //setText(String)
+		JButton btDelete=new JButton("Delete");
+		JButton btUpdate=new JButton("Update");
+		JButton btView=new JButton("View");
+		btAdd.setFont(new Font("",1,30));
+		btDelete.setFont(new Font("",1,30));
+		btUpdate.setFont(new Font("",1,30));
+		btView.setFont(new Font("",1,30));
+		f1.add(btAdd);
+		f1.add(btUpdate);
+		f1.add(btDelete);
+		f1.add(btView);
+		
 		f1.setVisible(true);
 	}
 }
