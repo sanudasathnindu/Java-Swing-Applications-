@@ -18,8 +18,10 @@ class AddStudentForm  extends JFrame{
 		titleLabel.setFont(new Font("",1,27));
 		titleLabel.setHorizontalAlignment(JLabel.CENTER);
 		add("North",titleLabel);
-		//-------------------------------------------------------------
-		
+//-------------------------------------------------------------		
+
+
+
 		JPanel southPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		btAdd=new JButton("Add Student");
 		btCancel=new JButton("Cancel");
@@ -41,13 +43,13 @@ class AddStudentForm  extends JFrame{
 		lblDbmsMarks.setFont(new Font("",1,20));
 		
 		JPanel labelPanel=new JPanel(new GridLayout(4,1));
+		JPanel idTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		labelPanel.add(lblStudentId);
 		labelPanel.add(lblName);
 		labelPanel.add(lblPrfMarks);
 		labelPanel.add(lblDbmsMarks);
 		add("West",labelPanel);
 		
-
 		//-------------------------------------------------------------
 		txtStudentId=new JTextField(5);
 		txtStudentId.setFont(new Font("",1,20));
@@ -59,13 +61,13 @@ class AddStudentForm  extends JFrame{
 		txtDbmsMarks.setFont(new Font("",1,20));
 		
 		JPanel textPanel=new JPanel(new GridLayout(4,1));
-		textPanel.add(txtStudentId);
+		JPanel idTextPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		idTextPanal.add(txtStudentId);
+		textPanel.add(idTextPanal);
 		textPanel.add(txtName);
 		textPanel.add(txtPrfMarks);
 		textPanel.add(txtDbmsMarks);
-		add("East",textPanel);
-		
-		
+		add("Center",textPanel);
 	}
 }
 class Demo{
