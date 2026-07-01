@@ -1,224 +1,40 @@
-
-
-
-
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-class AddStudentForm  extends JFrame{
-	private JTextField txtStudentId;
-	private JTextField txtName;
-	private JTextField txtPrfMarks;
-	private JTextField txtDbmsMarks;
+class Calculator extends JFrame{
+	private JButton btExit;
+	private JTextField txtTitle;
 	
-	private JButton btCancel;
-	private JButton btAdd;
-	
-	AddStudentForm(){
-		setSize(400,300);
+	Calculator(String title){
+		setTitle(title);
+		setSize(300,300);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		JLabel titleLabel=new JLabel("Add Student Form");
-		titleLabel.setFont(new Font("",1,27));
-		titleLabel.setHorizontalAlignment(JLabel.CENTER);
-		add("North",titleLabel);
-		//-------------------------------------------------------------
-		
-		JPanel southPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		btAdd=new JButton("Add Student");
-		btAdd.setFont(new Font("",1,25));
-		btAdd.addActionListener(new ActionListener(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new FlowLayout());
+		btExit=new JButton("Exit");
+		btExit.setFont(new Font("",1,25));
+		btExit.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
-				System.out.println("You Press Add Student");
+				System.out.println("Exited...");
 				System.exit(0);	//dispose();
 			}
 		});
-		add("North",btAdd);
+		add(btExit);
 		
-		btCancel=new JButton("Cancel");
-		btCancel.setFont(new Font("",1,25));
-		btCancel.addActionListener(new ActionListener(){
+		txtTitle=new JTextField(12);
+		txtTitle.setFont(new Font("",1,25));
+		txtTitle.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
-				System.out.println("Cancelled...!");
-				System.exit(0);	//dispose();
+				String title=txtTitle.getText();
+				setTitle(title);
 			}
 		});
-		add("North",btCancel);
-		
-		btAdd.setFont(new Font("",1,20));
-		btCancel.setFont(new Font("",1,20));
-		
-		southPanel.add(btAdd);
-		southPanel.add(btCancel);
-		add("South",southPanel);
-		//-------------------------------------------------------------
-		
-		JLabel lblStudentId=new JLabel("Student ID");
-		JLabel lblName=new JLabel("Name");
-		JLabel lblPrfMarks=new JLabel("Prf Marks");
-		JLabel lblDbmsMarks=new JLabel("Dbms Marks");
-		lblStudentId.setFont(new Font("",1,20));
-		lblName.setFont(new Font("",1,20));
-		lblPrfMarks.setFont(new Font("",1,20));
-		lblDbmsMarks.setFont(new Font("",1,20));
-		
-		JPanel labelPanel=new JPanel(new GridLayout(4,1));
-		JPanel idTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		labelPanel.add(lblStudentId);
-
-
-
-
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-class AddStudentForm  extends JFrame{
-	private JTextField txtStudentId;
-	private JTextField txtName;
-	private JTextField txtPrfMarks;
-	private JTextField txtDbmsMarks;
-	
-	private JButton btCancel;
-	private JButton btAdd;
-	
-	AddStudentForm(){
-		setSize(400,300);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		JLabel titleLabel=new JLabel("Add Student Form");
-		titleLabel.setFont(new Font("",1,27));
-		titleLabel.setHorizontalAlignment(JLabel.CENTER);
-		add("North",titleLabel);
-		//-------------------------------------------------------------
-		
-		JPanel southPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		btAdd=new JButton("Add Student");
-		btAdd.setFont(new Font("",1,25));
-		btAdd.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent evt){
-				System.out.println("You Press Add Student");
-				System.exit(0);	//dispose();
-			}
-		});
-		add("North",btAdd);
-		
-		btCancel=new JButton("Cancel");
-		btCancel.setFont(new Font("",1,25));
-		btCancel.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent evt){
-				System.out.println("Cancelled...!");
-				System.exit(0);	//dispose();
-			}
-		});
-		add("North",btCancel);
-		
-		btAdd.setFont(new Font("",1,20));
-		btCancel.setFont(new Font("",1,20));
-		
-		southPanel.add(btAdd);
-		southPanel.add(btCancel);
-		add("South",southPanel);
-		//-------------------------------------------------------------
-		
-		JLabel lblStudentId=new JLabel("Student ID");
-		JLabel lblName=new JLabel("Name");
-		JLabel lblPrfMarks=new JLabel("Prf Marks");
-		JLabel lblDbmsMarks=new JLabel("Dbms Marks");
-		lblStudentId.setFont(new Font("",1,20));
-		lblName.setFont(new Font("",1,20));
-		lblPrfMarks.setFont(new Font("",1,20));
-		lblDbmsMarks.setFont(new Font("",1,20));
-		
-		JPanel labelPanel=new JPanel(new GridLayout(4,1));
-		JPanel idTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		labelPanel.add(lblStudentId);
-		labelPanel.add(lblName);
-		labelPanel.add(lblPrfMarks);
-		labelPanel.add(lblDbmsMarks);
-		add("West",labelPanel);
-		
-		//-------------------------------------------------------------
-		txtStudentId=new JTextField(5);
-		txtStudentId.setFont(new Font("",1,20));
-		txtName=new JTextField(10);
-		txtName.setFont(new Font("",1,20));
-		txtPrfMarks=new JTextField(4);
-		txtPrfMarks.setFont(new Font("",1,20));
-		txtDbmsMarks=new JTextField(4);
-		txtDbmsMarks.setFont(new Font("",1,20));
-		
-		JPanel textPanel=new JPanel(new GridLayout(4,1));
-		
-		JPanel idTextPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		idTextPanal.add(txtStudentId);
-		textPanel.add(idTextPanal);
-		
-		JPanel nameTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		nameTextPanal.add(txtName);
-		textPanel.add(nameTextPanal);
-		
-		JPanel prfMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		prfMarksTextPanal.add(txtPrfMarks);
-		textPanel.add(prfMarksTextPanal);
-		
-		JPanel dbmsMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		dbmsMarksTextPanal.add(txtDbmsMarks);
-		textPanel.add(dbmsMarksTextPanal);
-		add("Center",textPanel);
+		add(txtTitle);
 	}
-}
+} 
 class Demo{
 	public static void main(String args[]){
-		new AddStudentForm().setVisible(true);
+		Calculator c1=new Calculator("Calculator");
+		c1.setVisible(true);
 	}
 }
-
-
-
-		labelPanel.add(lblName);
-		labelPanel.add(lblPrfMarks);
-		labelPanel.add(lblDbmsMarks);
-		add("West",labelPanel);
-		
-		//-------------------------------------------------------------
-		txtStudentId=new JTextField(5);
-		txtStudentId.setFont(new Font("",1,20));
-		txtName=new JTextField(10);
-		txtName.setFont(new Font("",1,20));
-		txtPrfMarks=new JTextField(4);
-		txtPrfMarks.setFont(new Font("",1,20));
-		txtDbmsMarks=new JTextField(4);
-		txtDbmsMarks.setFont(new Font("",1,20));
-		
-		JPanel textPanel=new JPanel(new GridLayout(4,1));
-		
-		JPanel idTextPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		idTextPanal.add(txtStudentId);
-		textPanel.add(idTextPanal);
-		
-		JPanel nameTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		nameTextPanal.add(txtName);
-		textPanel.add(nameTextPanal);
-		
-		JPanel prfMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		prfMarksTextPanal.add(txtPrfMarks);
-		textPanel.add(prfMarksTextPanal);
-		
-		JPanel dbmsMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		dbmsMarksTextPanal.add(txtDbmsMarks);
-		textPanel.add(dbmsMarksTextPanal);
-		add("Center",textPanel);
-	}
-}
-class Demo{
-	public static void main(String args[]){
-		new AddStudentForm().setVisible(true);
-	}
-}
-
-
