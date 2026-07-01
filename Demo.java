@@ -64,10 +64,22 @@ class AddStudentForm  extends JFrame{
 		JPanel idTextPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		idTextPanal.add(txtStudentId);
 		textPanel.add(idTextPanal);
-		textPanel.add(txtName);
-		textPanel.add(txtPrfMarks);
-		textPanel.add(txtDbmsMarks);
+		
+		JPanel nameTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		nameTextPanal.add(txtName);
+		textPanel.add(nameTextPanal);
+		
+		JPanel prfMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		prfMarksTextPanal.add(txtPrfMarks);
+		textPanel.add(prfMarksTextPanal);
+		
+		JPanel dbmsMarksTextPanal=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		dbmsMarksTextPanal.add(txtDbmsMarks);
+		textPanel.add(dbmsMarksTextPanal);
+
+		
 		add("Center",textPanel);
+		
 	}
 }
 class Demo{
