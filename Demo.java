@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 class AddStudentForm  extends JFrame{
-	private JTextField txtDisplay;
+	private JTextField txtStudentId;
+	private JTextField txtName;
+	private JTextField txtPrfMarks;
+	private JTextField txtDbmsMarks;
+	
 	private JButton btCancel;
 	private JButton btAdd;
 	
@@ -26,6 +30,7 @@ class AddStudentForm  extends JFrame{
 		southPanel.add(btCancel);
 		add("South",southPanel);
 		//-------------------------------------------------------------
+		
 		JLabel lblStudentId=new JLabel("Student ID");
 		JLabel lblName=new JLabel("Name");
 		JLabel lblPrfMarks=new JLabel("Prf Marks");
@@ -41,6 +46,26 @@ class AddStudentForm  extends JFrame{
 		labelPanel.add(lblPrfMarks);
 		labelPanel.add(lblDbmsMarks);
 		add("West",labelPanel);
+		
+
+		//-------------------------------------------------------------
+		txtStudentId=new JTextField(5);
+		txtStudentId.setFont(new Font("",1,20));
+		txtName=new JTextField(10);
+		txtName.setFont(new Font("",1,20));
+		txtPrfMarks=new JTextField(4);
+		txtPrfMarks.setFont(new Font("",1,20));
+		txtDbmsMarks=new JTextField(4);
+		txtDbmsMarks.setFont(new Font("",1,20));
+		
+		JPanel textPanel=new JPanel(new GridLayout(4,1));
+		textPanel.add(txtStudentId);
+		textPanel.add(txtName);
+		textPanel.add(txtPrfMarks);
+		textPanel.add(txtDbmsMarks);
+		add("East",textPanel);
+		
+		
 	}
 }
 class Demo{
